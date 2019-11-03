@@ -1,4 +1,4 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-debian-node:10-stretch-run
+FROM arm32v6//alpine:latest
 
 
 RUN apk add --update tzdata
