@@ -1,0 +1,6 @@
+version: '2'
+services:
+  FRPC:
+    build: ./FRPC
+    expose:
+      - "9998"

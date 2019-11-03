@@ -1,10 +1,11 @@
-FROM alpine:latest
+FROM balenalib/%%BALENA_MACHINE_NAME%%-debian-node:10-stretch-run
+
 
 RUN apk add --update tzdata
 ENV TZ=Asia/Shanghai
 
-ENV VERSION 0.27.0
-ENV PLATFORM amd64
+ENV VERSION 0.29.0
+ENV PLATFORM arm64
 
 WORKDIR /home/root/
 
@@ -19,9 +20,11 @@ RUN mkdir frp && \
 # Clean APK cache
 RUN rm -rf /var/cache/apk/*
 
-RUN mkdir /conf
-VOLUME /conf
+#RUN mkdir /conf
+#VOLUME /conf
+
+COPY frpc.ini /frpc.ini
 
 WORKDIR /home/root/frp/
 
-CMD ["./frpc","-c","/conf/frpc.ini"]
+CMD ["./frpc","-c","/frpc.ini"]

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 USAGE=client
-VERSION=0.27.0
-TARGET=amd64
+VERSION=0.29.0
+TARGET=arm64
 DOCKERFILE=Dockerfile
 
 
